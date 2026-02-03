@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Energy</title>
+    <title>Favorites - Your Energy</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -12,16 +12,24 @@
     <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
 
     <main id="main-content">
-      <load src="./partials/quote.html" />
-      <load src="./partials/filters.html" />
-      <load src="./partials/categories.html" />
-      <load src="./partials/exercises.html" />
+      <div class="container">
+        <div class="favorites-layout">
+          <aside class="favorites-sidebar">
+            <load src="./partials/quote.html" />
+          </aside>
+
+          <section class="favorites-section">
+            <h1 class="favorites-title">Favorites</h1>
+            <div id="favorites-container"></div>
+          </section>
+        </div>
+      </div>
     </main>
 
     <load src="./partials/footer.html" />
     <load src="./partials/modal-exercise.html" />
     <load src="./partials/modal-rating.html" />
 
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./favorites.js"></script>
   </body>
 </html>

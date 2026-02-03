@@ -1,7 +1,58 @@
 <footer class="footer">
-  <div class="container">
+  <div class="container footer-container">
+    <!-- Logo -->
+    <div class="footer-logo">
+      <a href="/index.html">
+        <svg width="120" height="24">
+          <use href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Social Links -->
+    <ul class="footer-social">
+      <li>
+        <a href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="24" height="24">
+            <use href="img/sprite.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="24" height="24">
+            <use href="img/sprite.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="24" height="24">
+            <use href="img/sprite.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Slogan -->
+    <p class="footer-slogan">Your energy for a healthy life</p>
+
+    <!-- Subscription Form -->
+    <form class="footer-subscription" id="subscription-form">
+      <label for="subscription-email" class="visually-hidden">Email for subscription</label>
+      <input 
+        type="email" 
+        id="subscription-email" 
+        name="email"
+        placeholder="Enter your email"
+        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        required
+      />
+      <button type="submit" class="footer-subscribe-btn">Subscribe</button>
+    </form>
+
     <p class="footer-desc">
-      Made with ✨ by
+      Made with âœ¨ by
       <a
         class="footer-link"
         href="https://goit.global/ua/"

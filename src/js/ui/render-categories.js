@@ -1,8 +1,11 @@
 export function renderCategories(categories, filter) {
   const listEl = document.getElementById('categories-list');
-  if (!listEl) return;
+  
+  if (!listEl) {
+    return;
+  }
 
-  if (!categories.length) {
+  if (!categories || !categories.length) {
     listEl.innerHTML = '<li>No categories found</li>';
     return;
   }

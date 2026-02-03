@@ -23,20 +23,29 @@ async function initQuote() {
   }
 }
 
-initQuote();
-
 import { initFilters } from './js/handlers/filter-handlers.js';
-
-initFilters();
-
 import {
   initCategoryHandlers,
   initBackButton,
   initSearchForm,
   initExerciseCardHandlers,
 } from './js/handlers/exercises-handlers.js';
+import { initSubscription } from './js/handlers/subscription-handler.js';
+import { initRatingModal } from './js/handlers/rating-handler.js';
 
-initCategoryHandlers();
-initBackButton();
-initSearchForm();
-initExerciseCardHandlers();
+function initApp() {
+  initQuote();
+  initFilters();
+  initCategoryHandlers();
+  initBackButton();
+  initSearchForm();
+  initExerciseCardHandlers();
+  initSubscription();
+  initRatingModal();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

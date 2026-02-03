@@ -6,11 +6,17 @@ let activeFilter = 'Muscles';
 export async function initFilters() {
   const buttons = document.querySelectorAll('.filter-btn');
 
+  if (buttons.length === 0) {
+    return;
+  }
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
 
-      if (filter === activeFilter) return;
+      if (filter === activeFilter) {
+        return;
+      }
 
       activeFilter = filter;
       updateActiveButton(buttons, btn);

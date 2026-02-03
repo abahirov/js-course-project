@@ -5,6 +5,7 @@ import {
   removeFromFavorites,
   isFavorite,
 } from '../storage/favorites-storage.js';
+import { openRatingModal } from '../handlers/rating-handler.js';
 
 export async function showExerciseModal(exerciseId) {
   try {
@@ -120,7 +121,7 @@ function initModalHandlers(exercise) {
 
   if (ratingBtn) {
     ratingBtn.addEventListener('click', () => {
-      console.log('Open rating modal for:', exercise._id);
+      openRatingModal(exercise._id);
     });
   }
 }
