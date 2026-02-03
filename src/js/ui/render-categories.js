@@ -1,4 +1,3 @@
-
 export function renderCategories(categories, filter) {
   const listEl = document.getElementById('categories-list');
   if (!listEl) return;
@@ -12,10 +11,17 @@ export function renderCategories(categories, filter) {
     .map(
       item => `
       <li class="category-card">
-        <button type="button" class="category-btn">
+        <button 
+          type="button" 
+          class="category-btn" 
+          data-filter="${filter}"
+          data-name="${item.name}"
+        >
           <img src="${item.imgUrl}" alt="${item.name}" loading="lazy" />
-          <h3>${item.name}</h3>
-          <p>${filter}</p>
+          <div class="category-info">
+            <h3>${item.name}</h3>
+            <p>${filter}</p>
+          </div>
         </button>
       </li>
     `

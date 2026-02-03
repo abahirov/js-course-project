@@ -1,5 +1,5 @@
-import { fetchFilters } from '../api/filters-api';
-import { renderCategories } from '../ui/render-categories';
+import { fetchFilters } from '../api/filters-api.js';
+import { renderCategories } from '../ui/render-categories.js';
 
 let activeFilter = 'Muscles';
 
@@ -29,7 +29,7 @@ function updateActiveButton(buttons, activeBtn) {
 async function loadCategories() {
   try {
     const data = await fetchFilters(activeFilter);
-    renderCategories(data, activeFilter);
+    renderCategories(data.results, activeFilter);
   } catch (error) {
     console.error(error);
   }

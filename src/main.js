@@ -1,11 +1,10 @@
-import { fetchQuote } from './js/api/quote-api';
+import { fetchQuote } from './js/api/quote-api.js';
 import {
   loadQuote,
   saveQuote,
   isQuoteActual,
-} from './js/storage/quote-storage';
-import { renderQuote } from './js/ui/render-quote';
-
+} from './js/storage/quote-storage.js';
+import { renderQuote } from './js/ui/render-quote.js';
 
 async function initQuote() {
   try {
@@ -26,6 +25,18 @@ async function initQuote() {
 
 initQuote();
 
-import { initFilters } from './js/handlers/filter-handlers';
+import { initFilters } from './js/handlers/filter-handlers.js';
 
 initFilters();
+
+import {
+  initCategoryHandlers,
+  initBackButton,
+  initSearchForm,
+  initExerciseCardHandlers,
+} from './js/handlers/exercises-handlers.js';
+
+initCategoryHandlers();
+initBackButton();
+initSearchForm();
+initExerciseCardHandlers();
