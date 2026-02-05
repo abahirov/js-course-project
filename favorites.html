@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/js-course-project/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Energy</title>
-    <script type="module" crossorigin src="/js-course-project/index.js"></script>
+    <title>Favorites - Your Energy</title>
+    <script type="module" crossorigin src="/js-course-project/favorites.js"></script>
     <link rel="modulepreload" crossorigin href="/js-course-project/assets/burger-menu-B1RBd-sX.js">
     <link rel="stylesheet" crossorigin href="/js-course-project/assets/styles-CRT_jPM5.css">
   </head>
@@ -137,39 +137,9 @@
 
 
     <main id="main-content">
-      <section class="hero-section">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          <img src="data:image/svg+xml,%3csvg%20width='60'%20height='60'%20viewBox='0%200%2060%2060'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M26.7271%2025.3227L27.4083%2026.021L19.0348%202.02583L28.6289%2024.502L29.0121%2025.3997L29.0451%2024.4247L29.872%200L30.6989%2024.4242L30.732%2025.3997L31.115%2024.5024L40.7093%202.02583L32.6573%2025.0994L32.3357%2026.021L33.017%2025.3227L50.0829%207.82973L34.2395%2026.4365L33.6067%2027.1797L56.7269%2016.6278L35.2319%2028.2549L34.3734%2028.7193L35.3473%2028.6622L59.744%2027.2319L34.5321%2030.4318L58.7268%2038.2099L35.0087%2032.3213L34.0614%2032.0861L34.8196%2032.7L53.8125%2048.079L33.8233%2034.0201L33.0249%2033.4586L33.5101%2034.3049L45.665%2055.5065L32.1043%2035.176L31.5626%2034.364L35.3845%2059.4892L29.872%2034.68L24.3595%2059.4892L28.0346%2035.329L28.1814%2034.364L27.6401%2035.1756L14.0791%2055.5065L26.2337%2034.3054L26.7191%2033.4586L25.9212%2034.0198L5.93151%2048.079L24.9241%2032.7003L25.6827%2032.0861L24.7358%2032.3211L1.01726%2038.2099L24.2827%2030.7305L25.212%2030.4318L0%2027.2319L25.3707%2028.7193L24.5126%2028.2551L3.01713%2016.6278L26.1373%2027.1797L9.66116%207.82973L26.7271%2025.3227ZM28.471%2026.3835L27.2592%2027.1338L26.4002%2028.2712L26.0102%2029.6421L26.1417%2031.0614L26.777%2032.3373L27.8303%2033.2975L29.1594%2033.8124H30.5847L31.9137%2033.2975L32.9671%2032.3373L33.6024%2031.0614L33.7339%2029.6421L33.3438%2028.2712L32.4849%2027.1338L31.2731%2026.3835L29.872%2026.1216L28.471%2026.3835Z'%20fill='%23242424'/%3e%3c/svg%3e" alt="" class="hero-icon" />
-          <span>
-            <span class="hero-title-get">Get </span><span class="hero-title-body">Body</span><span class="hero-title-rest"> in shape, Stay healthy</span>
-          </span>
-        </h1>
-        
-        <p class="hero-description">
-          Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.
-        </p>
-        
-        <ul class="hero-tags">
-          <li class="hero-tag">#Sport</li>
-          <li class="hero-tag">#Healthy</li>
-          <li class="hero-tag">#Workout</li>
-          <li class="hero-tag">#Diet</li>
-        </ul>
-      </div>
-      
-      <div class="hero-image">
-        <img src="/js-course-project/hero-image.png" alt="Women working out" loading="eager" />
-      </div>
-    </div>
-  </div>
-</section>
-
       <div class="container">
-        <div class="main-layout">
-          <aside class="sidebar">
+        <div class="favorites-layout">
+          <aside class="favorites-sidebar">
             <section class="quote-section">
   <h2 class="quote-title">
     <svg class="quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,61 +166,11 @@
 </section>
 
           </aside>
-          <div class="main-content">
-            <section class="filters-section">
-  <h2 class="filters-title">Filters</h2>
 
-  <div class="filters-buttons">
-    <button type="button" class="filter-btn is-active" data-filter="Muscles">
-      Muscles
-    </button>
-    <button type="button" class="filter-btn" data-filter="Body parts">
-      Body parts
-    </button>
-    <button type="button" class="filter-btn" data-filter="Equipment">
-      Equipment
-    </button>
-  </div>
-</section>
-
-            <section class="categories-section">
-  <h2 class="categories-title">Categories</h2>
-  <ul id="categories-list"></ul>
-</section>
-
-            <section class="exercises-section" style="display: none;">
-  <div class="exercises-header">
-    <button type="button" class="back-btn" id="back-to-categories">
-      ← Back to categories
-    </button>
-    <h2 class="exercises-title" id="exercises-title">Exercises</h2>
-  </div>
-
-  <form class="search-form" id="search-form">
-    <input
-      type="text"
-      class="search-input"
-      id="search-input"
-      placeholder="Search exercises..."
-      autocomplete="off"
-    />
-    <button type="submit" class="search-btn">
-      <svg width="20" height="20">
-        <use href="/js-course-project/assets/sprite-BnPQ37u_.svg#search"></use>
-      </svg>
-    </button>
-  </form>
-
-  <ul class="exercises-list" id="exercises-list"></ul>
-
-  <div class="exercises-empty" id="exercises-empty" style="display: none;">
-    <p>No exercises found. Try a different search.</p>
-  </div>
-
-  <div id="pagination-container"></div>
-</section>
-
-          </div>
+          <section class="favorites-section">
+            <h1 class="favorites-title">Favorites</h1>
+            <div id="favorites-container"></div>
+          </section>
         </div>
       </div>
     </main>
@@ -400,6 +320,6 @@
     </form>
   </div>
 </div>
-
+
   </body>
 </html>
