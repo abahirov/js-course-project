@@ -1,52 +1,55 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
+import path from 'path';
 
-export default defineConfig(({ command }) => ({
-  define: {
-    [command === 'serve' ? 'global' : '_global']: {},
-  },
+export default defineConfig(({ command }) => {
+  const rootDir = path.resolve(__dirname, 'src');
 
-  root: 'src',
-
-  base: '/js-course-project/',
-
-  build: {
-    sourcemap: true,
-    outDir: '../dist',
-    emptyOutDir: true,
-
-    rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'src/index.html'),
-        favorites: resolve(__dirname, 'src/favorites.html'),
-        // ❗ додавай нові сторінки ТІЛЬКИ тут
-      },
-
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        },
-
-        entryFileNames: '[name].js',
-
-        assetFileNames: assetInfo => {
-          if (assetInfo.name?.endsWith('.css')) {
-            return 'assets/[name]-[hash][extname]';
-          }
-          return 'assets/[name]-[hash][extname]';
-        },
-      },
+  return {
+    define: {
+      [command === 'serve' ? 'global' : '_global']: {},
     },
-  },
-
-  plugins: [
-    injectHTML(),
-    FullReload(['./src/**/*.html']),
-    SortCss({ sort: 'mobile-first' }),
-  ],
-}));
+    root: 'src',
+    build: {
+      sourcemap: true,
+      rollupOptions: {
+        input: glob.sync('./src/*.html'),
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+          entryFileNames: chunkInfo => {
+            if (chunkInfo.name === 'commonHelpers') {
+              return 'commonHelpers.js';
+            }
+            return '[name].js';
+          },
+          assetFileNames: assetInfo => {
+            if (assetInfo.name && assetInfo.name.endsWith('.html')) {
+              return '[name].[ext]';
+            }
+            return 'assets/[name]-[hash][extname]';
+          },
+        },
+      },
+      outDir: '../dist',
+      emptyOutDir: true,
+    },
+    plugins: [
+      injectHTML({
+        injectData: {
+          'back-link': path.resolve(rootDir, 'partials/back-link.html'),
+        },
+      }),
+      FullReload(['./src/**/*.html']),
+      SortCss({
+        sort: 'mobile-first',
+      }),
+    ],
+  };
+});
