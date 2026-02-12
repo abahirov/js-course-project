@@ -1,132 +1,160 @@
 <header class="header">
-  <div class="container header-container">
-    <!-- Logo -->
-    <a class="nav-logo" href="./index.html" aria-label="Go to Home page">
-      <svg class="nav-logo-icon" width="132" height="24" aria-hidden="true">
-        <use href="{=$icon-path}"></use>
+  <div class="container">
+    <a href="./index.html" class="logo" aria-label="Your Energy - Home">
+      <svg class="logo-svg" width="132" height="14" aria-hidden="true">
+        <use href="#logo"></use>
       </svg>
     </a>
 
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="navigation" aria-label="Main">
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./index.html">Home</a>
+          <a href="./index.html" class="nav-link" id="nav-home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./favorites.html"
+          <a href="./favorites.html" class="nav-link" id="nav-favorites"
             >Favorites</a
           >
         </li>
       </ul>
     </nav>
 
-    <!-- Social links (desktop & inside burger) -->
-    <ul class="social-list">
-      <li class="social-item">
+    <ul class="socials" aria-label="Social media links">
+      <li>
         <a
-          class="social-link"
           href="https://www.facebook.com/goITclub/"
+          class="social-link"
+          aria-label="Facebook"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GoIT Facebook"
         >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#facebook"></use>
+          <svg class="social-icon" width="28" height="28" aria-hidden="true">
+            <use href="#icon-facebook"></use>
           </svg>
         </a>
       </li>
-      <li class="social-item">
+      <li>
         <a
-          class="social-link"
           href="https://www.instagram.com/goitclub/"
+          class="social-link"
+          aria-label="Instagram"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GoIT Instagram"
         >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#instagram"></use>
+          <svg class="social-icon" width="28" height="28" aria-hidden="true">
+            <use href="#icon-instagram"></use>
           </svg>
         </a>
       </li>
-      <li class="social-item">
+      <li>
         <a
-          class="social-link"
           href="https://www.youtube.com/c/GoIT"
+          class="social-link"
+          aria-label="YouTube"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GoIT YouTube"
         >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#youtube"></use>
+          <svg class="social-icon" width="28" height="28" aria-hidden="true">
+            <use href="#icon-youtube"></use>
           </svg>
         </a>
       </li>
     </ul>
 
-    <!-- Burger button (mobile) -->
     <button
       type="button"
       class="burger-btn"
-      aria-label="Open navigation menu"
+      aria-label="Open menu"
       aria-expanded="false"
+      aria-controls="mobile-menu"
+      id="burger-btn"
     >
-      <svg width="32" height="32" aria-hidden="true">
-        <use href="img/sprite.svg#menu"></use>
+      <svg class="burger-icon" width="32" height="32" aria-hidden="true">
+        <use href="#icon-burger"></use>
       </svg>
     </button>
-  </div>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" hidden>
-    <nav aria-label="Mobile navigation">
-      <ul class="mobile-nav-list">
-        <li>
-          <a class="mobile-nav-link" href="./index.html">Home</a>
-        </li>
-        <li>
-          <a class="mobile-nav-link" href="./favorites.html">Favorites</a>
-        </li>
-      </ul>
-    </nav>
+    <dialog class="mobile-menu" id="mobile-menu" aria-label="Menu">
+      <div class="mobile-menu-content">
+        <button
+          type="button"
+          class="mobile-close-btn"
+          aria-label="Close menu"
+          id="mobile-close-btn"
+        >
+          <svg class="close-icon" width="32" height="32" aria-hidden="true">
+            <use href="#icon-close"></use>
+          </svg>
+        </button>
 
-    <ul class="mobile-social-list">
-      <li>
-        <a
-          href="https://www.facebook.com/goITclub/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GoIT Facebook"
-        >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#facebook"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com/goitclub/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GoIT Instagram"
-        >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#instagram"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.youtube.com/c/GoIT"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GoIT YouTube"
-        >
-          <svg width="24" height="24">
-            <use href="img/sprite.svg#youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
+        <nav aria-label="Main">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item">
+              <a href="./index.html" class="mobile-nav-link">Home</a>
+            </li>
+            <li class="mobile-nav-item">
+              <a href="./favorites.html" class="mobile-nav-link">Favorites</a>
+            </li>
+          </ul>
+        </nav>
+
+        <ul class="mobile-socials footer-socials" aria-label="Social media links">
+          <li>
+            <a
+              href="https://www.facebook.com/goITclub/"
+              class="social-link"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="social-icon"
+                width="28"
+                height="28"
+                aria-hidden="true"
+              >
+                <use href="#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/goitclub/"
+              class="social-link"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="social-icon"
+                width="28"
+                height="28"
+                aria-hidden="true"
+              >
+                <use href="#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/c/GoIT"
+              class="social-link"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="social-icon"
+                width="28"
+                height="28"
+                aria-hidden="true"
+              >
+                <use href="#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </dialog>
   </div>
 </header>
