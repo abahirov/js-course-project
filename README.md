@@ -1,6 +1,6 @@
 # Your Energy
 
-A Single Page Application for exploring fitness exercises, managing favorites, and staying motivated.
+A Single Page Application for exploring fitness exercises, managing favorites, and staying motivated. Made by Artem Bahirov. 
 
 ## Features
 
@@ -37,6 +37,6 @@ Deployed on GitHub Pages.
 
 Base URL: `https://your-energy.b.goit.study/api`
 
-PageSpeed Results:
+## PageSpeed Results:
 
 95 / 96 / 100 / 91
