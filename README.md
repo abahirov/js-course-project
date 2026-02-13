@@ -31,7 +31,7 @@ npm run build
 
 ## Live Demo
 
-Deployed on GitHub Pages.
+Deployed on GitHub Pages. https://abahirov.github.io/js-course-project/
 
 ## API
 
