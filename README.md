@@ -36,3 +36,7 @@ Deployed on GitHub Pages.
 ## API
 
 Base URL: `https://your-energy.b.goit.study/api`
+
+PageSpeed Results:
+
+95 / 96 / 100 / 91
